@@ -6,7 +6,8 @@ module AES_128bits (
 	input  logic [127:0] Plain_txt,
 
 	output logic [127:0] Cypher_txt,
-	output logic         Done
+	output logic         Done,
+	output logic         Busy
 );
 
 logic En_Func;
@@ -20,6 +21,7 @@ FSM Control_FSM (
 	.Valid(Valid),
 	.En_Func(En_Func),
 	.En_Exp(En_Exp),
+	.Busy(Busy),
 	.Done(Done)
 );
 

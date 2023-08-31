@@ -4,6 +4,7 @@ module FSM (
 	input  logic Valid,
 	output logic En_Func,
 	output logic En_Exp,
+	output logic Busy,
 	output logic Done
 );
 
@@ -74,6 +75,7 @@ end
 always @(*) begin
 	Done    = 1'b0;
 	En_Func = 1'b0;
+	Busy    = 1'b0;
 	En_Exp  = 1'b0;
 	if (CS == IDLE) begin
 		Done    = 1'b0;
@@ -83,6 +85,10 @@ always @(*) begin
 	else if (CS == RND_FUNC) begin
 		En_Func = 1'b1;
 		En_Exp  = 1'b1;
+		Busy    = 1'b1;
+	end
+	else if (CS ==  CYPHER_TXT) begin
+		Busy    = 1'b1;
 	end
 	else if (CS == FINISH) begin
 		Done    = 1'b1;

@@ -6,6 +6,7 @@ module testbench;
 	logic [127:0] Key_tb;
 	logic [127:0] Plain_txt_tb;
 	logic [127:0] Cypher_txt_tb;
+	logic         Busy_tb;
 	logic         Done_tb;
 
 	// DUT Instantition
@@ -16,6 +17,7 @@ module testbench;
 		.Key(Key_tb),
 		.Plain_txt(Plain_txt_tb),
 		.Cypher_txt(Cypher_txt_tb),
+		.Busy_tb(Busy_tb),
 		.Done(Done_tb)
 	);
 
