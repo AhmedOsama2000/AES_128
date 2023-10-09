@@ -55,6 +55,9 @@ always @(posedge CLK,negedge rst_n) begin
 		words_arr_in[3]  <= 32'b0;
 		rnd_num          <= 4'b0000;
 	end
+	else if (rnd_num == 10) begin
+		rnd_num <= 0;
+	end
 	else if (Valid) begin
 		words_arr_in[0]  <= words_arr_0[0];
 		words_arr_in[1]  <= words_arr_0[1];

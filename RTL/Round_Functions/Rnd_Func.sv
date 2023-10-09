@@ -60,6 +60,7 @@ always @(posedge CLK,negedge rst_n) begin
 	end
 	else if (rnds == 4'b1010) begin
 		Cypher_txt          <= next_state_out;
+		rnds                <= 4'b0001;
 	end
 	else if (En_Func) begin
 		subs_in_state       <= next_state_out;

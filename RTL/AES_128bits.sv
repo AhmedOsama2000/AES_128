@@ -1,7 +1,7 @@
 module AES_128bits (
-	input  logic 		rst_n,
-	input  logic 		CLK,
-	input  logic 	    Valid,
+	input  logic 		 rst_n,
+	input  logic 		 CLK,
+	input  logic 	     Valid,
 	input  logic [127:0] Key,
 	input  logic [127:0] Plain_txt,
 

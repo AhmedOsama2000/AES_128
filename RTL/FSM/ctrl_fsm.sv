@@ -23,7 +23,7 @@ always @(posedge CLK,negedge rst_n) begin
 	if (!rst_n) begin
 		n_rnds <= 4'b0000;
 	end
-	else if (CS == IDLE) begin
+	else if (CS == IDLE || n_rnds == 4'b1010) begin
 		n_rnds <= 4'b0000;
 	end
 	else begin
@@ -65,7 +65,12 @@ always @(*) begin
 			NS = FINISH;
 		end
 		FINISH: begin
-			NS = IDLE;
+			if (Valid) begin
+				NS = RND_FUNC;
+			end
+			else begin
+				NS = IDLE;
+			end
 		end
 		default: NS = IDLE;
 	endcase
