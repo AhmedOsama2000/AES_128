@@ -23,6 +23,10 @@
 
    Verification of AES is done with the help of UVM environment
 
+   ### AES Environment
+
+   ![UVM Env](UVM_Environment.png)
+
    ```UVM Classes```
    ```sv
    class aes_sequencer extends uvm_sequencer
@@ -70,7 +74,7 @@
    // To Run UVM_TEST
    run_test("aes_test");
 ---
-3. *Vivado Synthesis*
+1. *Vivado Synthesis*
 
    Synthesis is done via **BASYS-3** Xilinx Kit
 
