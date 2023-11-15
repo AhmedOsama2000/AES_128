@@ -23,6 +23,12 @@
 
    Verification of AES is done with the help of UVM environment
 
+   ### Verification Terminology
+
+   Try different plain texts **(P0-P3)** with different keys **(K0-K4)**
+
+   ![Alt text](<Verification Terminology.png>)
+
    ### AES Environment
 
    ![Alt text](UVM_Environment.jpg)
